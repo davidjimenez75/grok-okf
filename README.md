@@ -16,21 +16,25 @@ Orientado a programadores, desarrolladores y administradores de sistemas (Proxmo
 ├── ingenieria-grafos/
 ├── skills/
 ├── propuestas/
-│   └── pm98.dj75.net/          # Propuesta completa de servidor de desarrollo
+│   ├── pm98.dj75.net/          # Servidor de desarrollo Proxmox + Debian 13
+│   │   ├── resumen.md
+│   │   ├── arquitectura.md
+│   │   ├── host-proxmox.md
+│   │   ├── contenedores.md
+│   │   ├── red-dns.md
+│   │   ├── seguridad-backups.md
+│   │   ├── plan-implementacion.md
+│   │   ├── recursos.md
+│   │   └── stacks/
+│   └── git.dj75.net/           # Servidor Git ligero (Q1900M, 4 GB RAM)
 │       ├── resumen.md
+│       ├── hardware.md
+│       ├── opciones.md
 │       ├── arquitectura.md
-│       ├── host-proxmox.md
-│       ├── contenedores.md
 │       ├── red-dns.md
 │       ├── seguridad-backups.md
 │       ├── plan-implementacion.md
-│       ├── recursos.md
-│       └── stacks/
-│           ├── dotnet10.md
-│           ├── sqlserver.md
-│           ├── rust.md
-│           ├── lamp-php.md
-│           └── prestashop.md
+│       └── recursos.md
 ├── metricas/
 └── playbooks/
 ```
@@ -40,7 +44,7 @@ Orientado a programadores, desarrolladores y administradores de sistemas (Proxmo
 - Frontmatter de todos los conceptos ordenado **alfabéticamente**.
 - Contenidos redactados en español de España.
 - Conforme a la especificación OKF v0.2.
-- Incluye **propuesta completa** de servidor de desarrollo (pm98.dj75.net).
+- Incluye **propuestas completas** de servidores (pm98.dj75.net y git.dj75.net).
 
 ## Referencias
 
