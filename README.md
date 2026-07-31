@@ -2,41 +2,37 @@
 
 Bundle de conocimiento en **Open Knowledge Format (OKF) v0.2** con contenidos en español de España.
 
-Orientado a programadores, desarrolladores y administradores de sistemas (Proxmox, contenedores, LAMP, Debian, grafos de conocimiento y skills de agente).
+Orientado a programadores, desarrolladores y administradores de sistemas (Proxmox, contenedores, LAMP, Debian, grafos de conocimiento, skills de agente y propuestas de implementación).
 
 ## Estructura
 
 ```
 .
-├── index.md                    # Índice raíz del bundle
-├── log.md                      # Historial de cambios
+├── index.md
+├── log.md
 ├── conceptos/
-│   ├── grok.md
-│   ├── okf.md
-│   └── xai.md
 ├── sistemas/
-│   ├── proxmox.md
-│   ├── contenedores.md
-│   └── debian.md
 ├── desarrollo/
-│   ├── php.md
-│   ├── lamp.md
-│   └── git.md
 ├── ingenieria-grafos/
-│   ├── okf-como-grafo.md
-│   └── analisis-de-impacto.md
-├── skills/                     # Skills de agente recomendados
-│   ├── proxmox-ops.md
-│   ├── container-ops.md
-│   ├── lamp-ops.md
-│   ├── okf-author.md
-│   ├── debian-sysadmin.md
-│   └── impact-analysis.md
+├── skills/
+├── propuestas/
+│   └── pm98.dj75.net/          # Propuesta completa de servidor de desarrollo
+│       ├── resumen.md
+│       ├── arquitectura.md
+│       ├── host-proxmox.md
+│       ├── contenedores.md
+│       ├── red-dns.md
+│       ├── seguridad-backups.md
+│       ├── plan-implementacion.md
+│       ├── recursos.md
+│       └── stacks/
+│           ├── dotnet10.md
+│           ├── sqlserver.md
+│           ├── rust.md
+│           ├── lamp-php.md
+│           └── prestashop.md
 ├── metricas/
-│   └── usuarios-activos.md
 └── playbooks/
-    ├── respuesta-incidentes.md
-    └── backup-proxmox.md
 ```
 
 ## Características
@@ -44,7 +40,7 @@ Orientado a programadores, desarrolladores y administradores de sistemas (Proxmo
 - Frontmatter de todos los conceptos ordenado **alfabéticamente**.
 - Contenidos redactados en español de España.
 - Conforme a la especificación OKF v0.2.
-- Secciones prácticas + **skills de agente** recomendados para tu stack.
+- Incluye **propuesta completa** de servidor de desarrollo (pm98.dj75.net).
 
 ## Referencias
 
