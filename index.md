@@ -4,7 +4,7 @@ okf_version: "0.2"
 
 # Bundle de conocimiento Grok-OKF
 
-Conocimiento práctico sobre Grok, xAI, OKF, sistemas, desarrollo, grafos de conocimiento y skills de agente, redactado en español de España.
+Conocimiento práctico sobre Grok, xAI, OKF, sistemas, desarrollo, grafos de conocimiento, skills de agente y propuestas de implementación, redactado en español de España.
 
 # Conceptos
 
@@ -37,6 +37,10 @@ Conocimiento práctico sobre Grok, xAI, OKF, sistemas, desarrollo, grafos de con
 * [okf-author](skills/okf-author.md) - Creación y mantenimiento de bundles OKF
 * [debian-sysadmin](skills/debian-sysadmin.md) - Administración de sistemas Debian
 * [impact-analysis](skills/impact-analysis.md) - Análisis de impacto en sistemas y grafos
+
+# Propuestas
+
+* [pm98.dj75.net](propuestas/pm98.dj75.net/) - Servidor Proxmox VE 9.2 con contenedores Debian 13 para .NET 10, SQL Server, Rust, LAMP y PrestaShop
 
 # Métricas
 
