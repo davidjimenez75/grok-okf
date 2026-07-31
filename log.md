@@ -2,6 +2,13 @@
 
 ## 2026-07-31
 
+* **Propuesta git.dj75.net ampliada**: Añadidos ficheros individuales detallados para cada opción de software:
+  - `opciones/bare-git-ssh.md`
+  - `opciones/gitolite.md`
+  - `opciones/soft-serve.md`
+  - `opciones/forgejo.md`
+  - `opciones/gitlab.md`
+  - Actualizada la comparativa general con escenarios de 4 / 8 / 16 GB de RAM.
 * **Nueva propuesta git.dj75.net**: Servidor Git ligero para intranet doméstica sobre Debian 13 y hardware ASRock Q1900M (Intel Celeron J1900 + 4 GB RAM).
   - Documentos: resumen, hardware, opciones de software (Bare Git, Gitolite, Soft Serve, Forgejo/Gitea), arquitectura, red/DNS, seguridad y backups, plan de implementación y recursos.
   - Enfoque en bajo consumo de memoria y varias alternativas viables.
