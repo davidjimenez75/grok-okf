@@ -4,7 +4,7 @@ okf_version: "0.2"
 
 # Bundle de conocimiento Grok-OKF
 
-Conocimiento práctico sobre Grok, xAI, OKF, sistemas, desarrollo y grafos de conocimiento, redactado en español de España.
+Conocimiento práctico sobre Grok, xAI, OKF, sistemas, desarrollo, grafos de conocimiento y skills de agente, redactado en español de España.
 
 # Conceptos
 
@@ -28,6 +28,15 @@ Conocimiento práctico sobre Grok, xAI, OKF, sistemas, desarrollo y grafos de co
 
 * [OKF como grafo](ingenieria-grafos/okf-como-grafo.md) - Cómo un bundle OKF forma un grafo de conocimiento
 * [Análisis de impacto](ingenieria-grafos/analisis-de-impacto.md) - Evaluar el alcance de cambios en sistemas interdependientes
+
+# Skills recomendados
+
+* [proxmox-ops](skills/proxmox-ops.md) - Operaciones y gestión de Proxmox VE
+* [container-ops](skills/container-ops.md) - Gestión de contenedores (LXC, Docker, Podman)
+* [lamp-ops](skills/lamp-ops.md) - Operaciones del stack LAMP
+* [okf-author](skills/okf-author.md) - Creación y mantenimiento de bundles OKF
+* [debian-sysadmin](skills/debian-sysadmin.md) - Administración de sistemas Debian
+* [impact-analysis](skills/impact-analysis.md) - Análisis de impacto en sistemas y grafos
 
 # Métricas
 
