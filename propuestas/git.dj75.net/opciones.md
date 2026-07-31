@@ -1,5 +1,5 @@
 ---
-description: Comparativa de opciones de software para alojar repositorios Git bajo restricciones de 4 GB RAM en Debian 13.
+description: Comparativa de opciones de software para alojar repositorios Git en git.dj75.net según la RAM disponible.
 generated:
   at: 2026-07-31T15:20:00Z
   by: agent:grok
@@ -11,106 +11,67 @@ tags:
   - forgejo
   - soft-serve
   - gitolite
+  - gitlab
 title: Opciones de software — git.dj75.net
 type: Reference
 verified:
-  at: 2026-07-31T15:20:00Z
+  at: 2026-07-31T20:55:00Z
   by: agent:grok
 ---
 
 # Tabla comparativa rápida
 
-| Opción                  | RAM aproximada | UI web          | Control acceso     | Complejidad | Recomendada en 4 GB |
-|-------------------------|----------------|-----------------|--------------------|-------------|---------------------|
-| Bare Git + SSH          | < 50 MB        | No (opcional cgit) | authorized_keys   | Muy baja    | **Sí (mejor)**      |
-| Gitolite                | < 80 MB        | No              | Excelente (ACL)    | Baja        | **Sí**              |
-| Soft Serve              | 20–60 MB       | TUI + SSH       | Claves SSH         | Baja        | **Sí**              |
-| Forgejo / Gitea mínimo  | 150–400 MB     | Completa        | Usuarios/orgs      | Media       | Condicional         |
-| GitLab                  | 4 GB+          | Completa        | Completo           | Alta        | **No**              |
+| Opción                  | RAM aprox. (idle) | UI web          | Control acceso     | Compatible 4 GB | Compatible 8 GB | Compatible 16 GB |
+|-------------------------|-------------------|-----------------|--------------------|-----------------|-----------------|------------------|
+| Bare Git + SSH          | < 50 MB           | No (opcional cgit) | authorized_keys | **Sí (ideal)**  | Sí              | Sí               |
+| Gitolite                | < 80 MB           | No              | Excelente (ACL)    | **Sí**          | Sí              | Sí               |
+| Soft Serve              | 20–60 MB          | TUI + SSH       | Claves + collabs   | **Sí**          | Sí              | Sí               |
+| Forgejo / Gitea         | 150–400 MB        | Completa        | Usuarios/orgs      | Condicional     | **Sí (recomendado)** | Sí          |
+| GitLab CE               | varios GB         | Completa + CI   | Completo           | **No**          | Justo (ajustes) | **Razonable**    |
 
-# 1. Bare Git + SSH (opción mínima y más robusta)
+# Ficheros detallados
 
-**Descripción**: Repositorios bare (`git init --bare`) servidos únicamente por SSH. Los usuarios se autentican con claves públicas en `~git/.ssh/authorized_keys`.
+* [Bare Git + SSH](opciones/bare-git-ssh.md)
+* [Gitolite](opciones/gitolite.md)
+* [Soft Serve](opciones/soft-serve.md)
+* [Forgejo / Gitea](opciones/forgejo.md)
+* [GitLab CE](opciones/gitlab.md)
 
-**Ventajas**:
-- Consumo de recursos prácticamente nulo.
-- Máxima compatibilidad y fiabilidad.
-- Paquetes 100 % oficiales de Debian (`git`, `openssh-server`).
-- Fácil de respaldar (copiar directorio de repos).
+# Resumen por escenario de RAM
 
-**Desventajas**:
-- Sin interfaz web nativa.
-- Gestión de permisos manual (o con scripts).
+## Con 4 GB (configuración actual)
 
-**Ampliaciones ligeras**:
-- `cgit` o `gitweb` + nginx/lighttpd para navegación de solo lectura.
-- Script simple de creación de repos.
+Opciones recomendadas, de más simple a más completa:
 
-**Cuándo elegirla**: Cuando se prioriza estabilidad absoluta y se trabaja principalmente desde terminal / clientes Git.
+1. **Bare Git + SSH** — máxima robustez y mínimo consumo.
+2. **Gitolite** — si se necesitan permisos finos entre varios usuarios.
+3. **Soft Serve** — si se quiere una experiencia moderna con TUI.
+4. **Forgejo** solo si la UI web es imprescindible y se acepta recortar funcionalidades.
 
-# 2. Gitolite
+GitLab **no** es viable.
 
-**Descripción**: Capa de control de acceso sobre bare Git. Configuración centralizada en un repositorio `gitolite-admin`.
+## Con 8 GB
 
-**Ventajas**:
-- ACL granulares (lectura/escritura por repo y usuario/grupo).
-- Muy maduro y ligero (Perl).
-- Sigue siendo 100 % SSH.
+- **Forgejo / Gitea** pasa a ser la opción más equilibrada (UI web completa y holgada).
+- Soft Serve / Gitolite / Bare siguen siendo excelentes si no se necesita web.
+- GitLab CE es posible solo con muchos ajustes y rendimiento limitado por el CPU J1900.
 
-**Desventajas**:
-- Curva de aprendizaje inicial de la configuración.
-- Sin UI web.
+## Con 16 GB
 
-**Cuándo elegirla**: Si se necesita control de permisos fino sin añadir una aplicación web.
+- **Forgejo** sigue siendo la recomendación principal por fluidez.
+- **GitLab CE** se vuelve usable para uso personal, aunque el procesador J1900 seguirá notándose en operaciones pesadas y CI.
 
-# 3. Soft Serve (Charmbracelet)
+# Opciones descartadas o menos recomendables
 
-**Descripción**: Servidor Git moderno escrito en Go. Un solo binario. Acceso por SSH con TUI agradable, creación de repos, gestión de claves y usuarios desde la propia terminal.
+- **Gogs**: menos activo; Forgejo/Gitea lo superan.
+- **OneDev / GitBucket**: basados en Java → mayor consumo de RAM.
+- **GitLab** en 4 GB: inviable.
 
-**Ventajas**:
-- Extremadamente ligero.
-- Experiencia de usuario moderna sin web.
-- Fácil de desplegar (binario o contenedor).
+# Recomendación final
 
-**Desventajas**:
-- Proyecto más joven que Gitolite/Gitea.
-- Sin interfaz web clásica (solo TUI sobre SSH).
-
-**Cuándo elegirla**: Si se quiere algo moderno, agradable de usar y con muy poco overhead.
-
-# 4. Forgejo / Gitea (configuración mínima)
-
-**Descripción**: Forgejo es el fork comunitario activo de Gitea. Ambos son aplicaciones Go completas con issues, PRs, wiki, etc.
-
-**Requisitos oficiales orientativos**: 1–2 núcleos y 512 MB–1 GB para equipos pequeños. En la práctica, con SQLite y features desactivadas puede bajar a ~150–300 MB en reposo.
-
-**Ajustes obligatorios en 4 GB**:
-- Usar **SQLite** (nunca PostgreSQL/MySQL).
-- Desactivar o limitar: actions, packages, LFS si no se usa, mirror, etc.
-- Reducir workers y concurrencia.
-- Proxy inverso ligero (Caddy o nginx) en el mismo host o en otro CT si hubiera Proxmox.
-
-**Ventajas**:
-- Experiencia tipo GitHub completa.
-- Gestión de usuarios, organizaciones, webhooks, etc.
-
-**Desventajas**:
-- Consume una parte significativa de los 4 GB.
-- Más superficie de ataque y mantenimiento (actualizaciones, base de datos).
-
-**Cuándo elegirla**: Solo si la UI web es imprescindible y se acepta que el sistema operará cerca del límite de memoria.
-
-# 5. Opciones descartadas
-
-- **GitLab**: requiere fácilmente 4–8 GB solo para sí mismo. Inviable.
-- **OneDev / GitBucket**: Java → mayor consumo de RAM.
-- **Gogs**: proyecto menos activo; Forgejo/Gitea son mejores opciones en 2026.
-
-# Recomendación final por escenario
-
-| Escenario                              | Opción recomendada          |
-|----------------------------------------|-----------------------------|
-| Uso personal, pocos repos, solo CLI    | Bare Git + SSH              |
-| Varios usuarios / permisos finos       | Gitolite                    |
-| Experiencia moderna sin web            | Soft Serve                  |
-| Necesidad de UI web tipo GitHub        | Forgejo (mínimo) + ampliar RAM a 8 GB si es posible |
+| Prioridad | Situación                              | Opción recomendada      |
+|-----------|----------------------------------------|-------------------------|
+| 1         | 4 GB + uso CLI                         | Bare Git o Soft Serve   |
+| 2         | 4 GB + varios usuarios con permisos    | Gitolite                |
+| 3         | 8 GB + se quiere UI web                | **Forgejo**             |
+| 4         | 16 GB + se necesita CI/CD de GitLab    | GitLab CE (con reservas por CPU) |
