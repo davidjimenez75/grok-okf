@@ -2,6 +2,13 @@
 
 ## 2026-07-31
 
+* **Nueva propuesta mono-repo-servidor**: Monorepo unificado que concentra:
+  - Scripts de instalación, verificación y actualización
+  - Comandos CLI (preferencia `/usr/local/bin`)
+  - Documentación y conocimiento OKF (tareas, ideas, mapas mentales, diagramas, infraestructura)
+  - Servidor web (PHP/LAMP o estático) para docs y grafo OKF
+  - Mantenimiento autónomo con Grok Build, Claude Code, OpenCode y Codex
+  - Documentos: resumen, arquitectura, estructura-repo, scripts-comandos, servidor-web, agentes-autonomos, plan-implementacion, opciones-binarios
 * **Propuesta git.dj75.net ampliada**: Añadidos ficheros individuales detallados para cada opción de software:
   - `opciones/bare-git-ssh.md`
   - `opciones/gitolite.md`
