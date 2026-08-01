@@ -43,6 +43,7 @@ Conocimiento práctico sobre Grok, xAI, OKF, sistemas, desarrollo, grafos de con
 * [pm98.dj75.net](propuestas/pm98.dj75.net/) - Servidor Proxmox VE 9.2 con contenedores Debian 13 para .NET 10, SQL Server, Rust, LAMP y PrestaShop
 * [git.dj75.net](propuestas/git.dj75.net/) - Servidor Git ligero para intranet doméstica sobre Debian 13 y hardware Q1900M (4 GB RAM)
 * [mono-repo-servidor](propuestas/mono-repo-servidor/) - Monorepo unificado de operaciones de servidor + conocimiento OKF + documentación + servidor web + agentes autónomos
+* [grok.dj75.net](propuestas/grok.dj75.net/) - Contenedor Debian 13 con agente autónomo Grok + interfaz web SSH/terminal (FQDN grok.dj75.net)
 
 # Métricas
 

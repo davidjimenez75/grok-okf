@@ -1,5 +1,11 @@
 # Registro de actualizaciones del bundle
 
+## 2026-08-01
+
+* **Nueva propuesta grok.dj75.net**: Contenedor LXC Debian 13 dedicado a un agente autónomo potenciado por Grok, con FQDN `grok.dj75.net` e interfaz web de terminal/SSH (ttyd) que permite interactuar directamente con Grok desde el navegador.
+  - Documentos: resumen, arquitectura, contenedor, agente-autonomo, interfaz-web-terminal, red-dns, seguridad-backups, plan-implementacion, recursos.
+  - Integración con la visión de agentes del mono-repo y con el resto de la infraestructura Proxmox/Debian 13.
+
 ## 2026-07-31
 
 * **Nueva propuesta mono-repo-servidor**: Monorepo unificado que concentra:
